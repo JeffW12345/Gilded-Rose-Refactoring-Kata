@@ -12,13 +12,13 @@ public class Items {
                 new AgedBrieQualityCalc().setQualityScore(item);
             }
             if(item.name == "Sulfuras, Hand of Ragnaros"){
-                new QualityDoesNotChange().setQualityScore(item);
+                new CalcQualityDoesNotChange().setQualityScore(item);
             }
             if(item.name == "Backstage passes to a TAFKAL80ETC concert"){
                 new BackstageTicketsQualityCalc().setQualityScore(item);
             }
             else{
-                new StandardQualiityCalc().setQualityScore(item);
+                new CalcQualityStandard().setQualityScore(item);
             }
         }
     }
@@ -26,10 +26,10 @@ public class Items {
     public void updateSellByAll() {
         for(Item item : itemsList){
             if(item.name == "Sulfuras, Hand of Ragnaros"){
-                new NoSellByDate().setSellIn(item);
+                new CalcSellInNoSellInDate().setSellIn(item);
             }
             else{
-                new StandardCalcSellBy().setSellIn(item);
+                new CalcSellInStandard().setSellIn(item);
             }
         }
     }

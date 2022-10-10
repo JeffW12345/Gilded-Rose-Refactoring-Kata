@@ -1,7 +1,5 @@
 package com.gildedrose;
 
-import java.time.LocalDateTime;
-
-public interface IQualityCalc {
+public interface CalcQuality {
     public void setQualityScore(Item item);
 }

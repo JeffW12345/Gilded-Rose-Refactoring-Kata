@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public interface ICalcNewSellBy {
+public interface CalcSellIn {
 
     public void setSellIn(Item item);
 }

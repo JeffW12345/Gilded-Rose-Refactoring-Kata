@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public class BackstageTicketsQualityCalc implements IQualityCalc {
+public class BackstageTicketsQualityCalc implements CalcQuality {
     @Override
     public void setQualityScore(Item item) {
         if(item.quality < 50 && item.sellIn < 11 && item.sellIn > 5){

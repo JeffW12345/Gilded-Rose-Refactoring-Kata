@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public class NoSellByDate implements ICalcNewSellBy {
+public class CalcSellInNoSellInDate implements CalcSellIn {
 
     @Override
     public void setSellIn(Item item) {

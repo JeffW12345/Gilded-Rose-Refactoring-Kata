@@ -61,16 +61,16 @@ class GildedRoseTest {
         assertEquals(50, ticket.quality);
     }
     @Test
-    void does_Standard_Calc_New_SellBy_Decrement_The_Sell_By_By_One(){
+    void does_Standard_Calc_New_SellBy_Decrement_The_Sell_By_One(){
         Item ticket = new Item("ticket", 1, 50);
-        new StandardCalcSellBy().setSellIn(ticket);
+        new CalcSellInStandard().setSellIn(ticket);
         assertEquals(0, ticket.sellIn);
     }
 
     @Test
     void does_Standard_Quality_Calc_Decrement_By_Two_If_Sell_By_Date_Passed(){
         Item ticket = new Item("ticket", -1, 10);
-        new StandardQualiityCalc().setQualityScore(ticket);
+        new CalcQualityStandard().setQualityScore(ticket);
         assertEquals(8, ticket.quality);
     }
 
