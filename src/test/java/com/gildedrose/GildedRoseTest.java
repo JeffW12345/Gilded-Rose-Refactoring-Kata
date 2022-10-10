@@ -1,5 +1,11 @@
 package com.gildedrose;
 
+import com.gildedrose.calculatequality.CalcQualityAgedBrie;
+import com.gildedrose.calculatequality.CalcQualityBackstageTickets;
+import com.gildedrose.calculatequality.CalcQualityStandard;
+import com.gildedrose.calculatesellin.CalcSellInStandard;
+import com.gildedrose.itemsclasses.Item;
+import com.gildedrose.itemsclasses.Items;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

@@ -1,4 +1,6 @@
-package com.gildedrose;
+package com.gildedrose.calculatesellin;
+
+import com.gildedrose.itemsclasses.Item;
 
 public class CalcSellInStandard implements CalcSellIn {
 

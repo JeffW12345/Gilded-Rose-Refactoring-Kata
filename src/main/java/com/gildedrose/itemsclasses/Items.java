@@ -1,4 +1,12 @@
-package com.gildedrose;
+package com.gildedrose.itemsclasses;
+
+import com.gildedrose.calculatequality.CalcQualityAgedBrie;
+import com.gildedrose.calculatequality.CalcQualityBackstageTickets;
+import com.gildedrose.calculatequality.CalcQualityDoesNotChange;
+import com.gildedrose.calculatequality.CalcQualityStandard;
+import com.gildedrose.calculatesellin.CalcSellInNoSellInDate;
+import com.gildedrose.calculatesellin.CalcSellInStandard;
+import com.gildedrose.itemsclasses.Item;
 
 public class Items {
     public Item[] itemsList;

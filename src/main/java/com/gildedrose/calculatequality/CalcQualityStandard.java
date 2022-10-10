@@ -1,4 +1,6 @@
-package com.gildedrose;
+package com.gildedrose.calculatequality;
+
+import com.gildedrose.itemsclasses.Item;
 
 public class CalcQualityStandard implements CalcQuality {
 
