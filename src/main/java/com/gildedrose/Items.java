@@ -9,13 +9,13 @@ public class Items {
     public void updateQualityAll(){
         for(Item item : itemsList){
             if(item.name == "Aged Brie"){
-                new AgedBrieQualityCalc().setQualityScore(item);
+                new CalcQualityAgedBrie().setQualityScore(item);
             }
             if(item.name == "Sulfuras, Hand of Ragnaros"){
                 new CalcQualityDoesNotChange().setQualityScore(item);
             }
             if(item.name == "Backstage passes to a TAFKAL80ETC concert"){
-                new BackstageTicketsQualityCalc().setQualityScore(item);
+                new CalcQualityBackstageTickets().setQualityScore(item);
             }
             else{
                 new CalcQualityStandard().setQualityScore(item);

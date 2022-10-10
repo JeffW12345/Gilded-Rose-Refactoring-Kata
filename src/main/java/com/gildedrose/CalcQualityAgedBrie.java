@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public class AgedBrieQualityCalc implements CalcQuality {
+public class CalcQualityAgedBrie implements CalcQuality {
 
 
     @Override

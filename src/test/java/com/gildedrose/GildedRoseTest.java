@@ -10,54 +10,54 @@ class GildedRoseTest {
     @Test
     void does_AgedBrieQualityCalc_Work_Where_Existing_Val_Under_Fifty(){
         Item agedBrie = new Item("Aged brie", 10, 49);
-        new AgedBrieQualityCalc().setQualityScore(agedBrie);
+        new CalcQualityAgedBrie().setQualityScore(agedBrie);
         assertEquals(50, agedBrie.quality);
     }
     @Test
     void does_AgedBrieQualityCalc_Work_Where_Existing_Val_Fifty(){
         Item agedBrie = new Item("Aged brie", 10, 50);
-        new AgedBrieQualityCalc().setQualityScore(agedBrie);
+        new CalcQualityAgedBrie().setQualityScore(agedBrie);
         assertEquals(50, agedBrie.quality);
     }
     @Test
     void does_AgedBrieQualityCalc_Work_Where_Existing_Val_Over_Fifty(){
         Item agedBrie = new Item("Aged brie", 10, 51);
-        new AgedBrieQualityCalc().setQualityScore(agedBrie);
+        new CalcQualityAgedBrie().setQualityScore(agedBrie);
         assertEquals(51, agedBrie.quality);
     }
 
     @Test
     void does_BackstageTicketsQualityCalc_Increment_Quality_By_Two_If_Less_Than_11_Days_Left(){
         Item ticket = new Item("ticket", 10, 10);
-        new BackstageTicketsQualityCalc().setQualityScore(ticket);
+        new CalcQualityBackstageTickets().setQualityScore(ticket);
         assertEquals(12, ticket.quality);
     }
 
     @Test
     void does_BackstageTicketsQualityCalc_Increment_Quality_By_Three_If_Less_Than_6_Days_Left(){
         Item ticket = new Item("ticket", 5, 10);
-        new BackstageTicketsQualityCalc().setQualityScore(ticket);
+        new CalcQualityBackstageTickets().setQualityScore(ticket);
         assertEquals(13, ticket.quality);
     }
 
     @Test
     void does_BackstageTicketsQualityCalc_Increment_Quality_Go_To_Zero_If_Sell_By_Date_Less_Than_One(){
         Item ticket = new Item("ticket", 0, 10);
-        new BackstageTicketsQualityCalc().setQualityScore(ticket);
+        new CalcQualityBackstageTickets().setQualityScore(ticket);
         assertEquals(0, ticket.quality);
     }
 
     @Test
     void does_BackstageTicketsQualityCalc_Not_Change_Quality_If_More_Than_Ten_Days_Left(){
     Item ticket = new Item("ticket", 11, 11);
-    new BackstageTicketsQualityCalc().setQualityScore(ticket);
+    new CalcQualityBackstageTickets().setQualityScore(ticket);
     assertEquals(11, ticket.quality);
     }
 
     @Test
     void does_BackstageTicketsQualityCalc_Not_Increment_If_Quality_Already_Above_49(){
         Item ticket = new Item("ticket", 5, 50);
-        new BackstageTicketsQualityCalc().setQualityScore(ticket);
+        new CalcQualityBackstageTickets().setQualityScore(ticket);
         assertEquals(50, ticket.quality);
     }
     @Test
