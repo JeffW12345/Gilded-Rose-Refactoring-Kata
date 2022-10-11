@@ -16,7 +16,7 @@ public class Items {
     public void updateQualityAll(){
         for(Item item : itemsList){
             if(item.name.equals("Aged Brie")){
-                updateQuality(ProductType.AGED_BRIE, item);
+                updateQuality(CalcQualityAgedBrie.class, item);
                 continue;
             }
             if(item.name.equals("Sulfuras, Hand of Ragnaros")){
@@ -31,6 +31,9 @@ public class Items {
         }
     }
 
+    private void updateQuality(Class<?> cls, Item item){
+
+    }
     private void updateQuality(ProductType productType, Item item) {
         if(productType == ProductType.AGED_BRIE){
             item.quality = new CalcQualityAgedBrie(item).getNewQualityScore();
