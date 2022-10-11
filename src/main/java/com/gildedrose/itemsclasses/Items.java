@@ -16,32 +16,34 @@ public class Items {
     public void updateQualityAll(){
         for(Item item : itemsList){
             if(item.name.equals("Aged Brie")){
-                updateQuality(CalculateQualityAgedBrie.class, item);
+                updateQuality(item);
                 continue;
             }
             if(item.name.equals("Sulfuras, Hand of Ragnaros")){
-                updateQuality(CalculateQualityDoesNotChange.class, item);
+                updateQuality(item);
                 continue;
             }
             if(item.name.equals("Backstage passes to a TAFKAL80ETC concert")){
-                updateQuality(CalculateQualityBackstageTickets.class, item);
+                updateQuality(item);
                 continue;
             }
-            updateQuality(CalculateQualityStandard.class, item);
+            updateQuality(item);
         }
     }
 
-    private void updateQuality(Class<?> cls, Item item){
-        if(cls == CalculateQualityAgedBrie.class){
+    private void updateQuality(Item item){
+        if(item.name.equals("Aged Brie")){
             item.quality = new CalculateQualityAgedBrie(item).getNewQualityScore();
+            return;
         }
-        if(cls == CalculateQualityDoesNotChange.class){
+        if(item.name.equals("Sulfuras, Hand of Ragnaros")){
             item.quality = new CalculateQualityDoesNotChange(item).getNewQualityScore();
+            return;
         }
-        if(cls == CalculateQualityBackstageTickets.class){
+        if(item.name.equals("Backstage passes to a TAFKAL80ETC concert")){
             item.quality = new CalculateQualityBackstageTickets(item).getNewQualityScore();
         }
-        if(cls == CalculateQualityStandard.class){
+        else{
             item.quality = new CalculateQualityStandard(item).getNewQualityScore();
         }
     }
