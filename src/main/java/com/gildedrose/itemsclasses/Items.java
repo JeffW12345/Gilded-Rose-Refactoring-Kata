@@ -6,7 +6,6 @@ import com.gildedrose.calculatequality.CalcQualityDoesNotChange;
 import com.gildedrose.calculatequality.CalcQualityStandard;
 import com.gildedrose.calculatesellin.CalcSellInNoSellInDate;
 import com.gildedrose.calculatesellin.CalcSellInStandard;
-import com.gildedrose.itemsclasses.Item;
 
 public class Items {
     public Item[] itemsList;
@@ -16,18 +15,34 @@ public class Items {
     }
     public void updateQualityAll(){
         for(Item item : itemsList){
-            if(item.name == "Aged Brie"){
-                new CalcQualityAgedBrie().setQualityScore(item);
+            if(item.name.equals("Aged Brie")){
+                updateQuality(ProductType.AGED_BRIE, item);
+                continue;
             }
-            if(item.name == "Sulfuras, Hand of Ragnaros"){
-                new CalcQualityDoesNotChange().setQualityScore(item);
+            if(item.name.equals("Sulfuras, Hand of Ragnaros")){
+                updateQuality(ProductType.SULFURAS, item);
+                continue;
             }
-            if(item.name == "Backstage passes to a TAFKAL80ETC concert"){
-                new CalcQualityBackstageTickets().setQualityScore(item);
+            if(item.name.equals("Backstage passes to a TAFKAL80ETC concert")){
+                updateQuality(ProductType.BACKSTAGE_PASSES, item);
+                continue;
             }
-            else{
-                new CalcQualityStandard().setQualityScore(item);
-            }
+            updateQuality(ProductType.STANDARD_ITEMS, item);
+        }
+    }
+
+    private void updateQuality(ProductType productType, Item item) {
+        if(productType == ProductType.AGED_BRIE){
+            item.quality = new CalcQualityAgedBrie(item).getNewQualityScore();
+        }
+        if(productType == ProductType.SULFURAS){
+            item.quality = new CalcQualityDoesNotChange(item).getNewQualityScore();
+        }
+        if(productType == ProductType.BACKSTAGE_PASSES){
+            item.quality = new CalcQualityBackstageTickets(item).getNewQualityScore();
+        }
+        if(productType == ProductType.STANDARD_ITEMS){
+            item.quality = new CalcQualityStandard(item).getNewQualityScore();
         }
     }
 

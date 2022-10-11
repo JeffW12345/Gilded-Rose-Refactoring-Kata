@@ -3,8 +3,13 @@ package com.gildedrose.calculatequality;
 import com.gildedrose.itemsclasses.Item;
 
 public class CalcQualityDoesNotChange implements CalcQuality {
+    Item item;
+    public CalcQualityDoesNotChange(Item item) {
+        this.item = item;
+    }
+
     @Override
-    public void setQualityScore(Item item) {
-        item.quality += 0;
+    public int getNewQualityScore() {
+        return item.quality += 0;
     }
 }

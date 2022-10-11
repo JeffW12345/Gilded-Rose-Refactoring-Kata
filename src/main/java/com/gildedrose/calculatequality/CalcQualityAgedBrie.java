@@ -4,10 +4,15 @@ import com.gildedrose.itemsclasses.Item;
 
 public class CalcQualityAgedBrie implements CalcQuality {
 
+    Item item;
+
+    public CalcQualityAgedBrie(Item item) {
+        this.item = item;
+    }
 
     @Override
-    public void setQualityScore(Item item) {
-        if (item.quality < 50) item.quality++;
-        }
+    public int getNewQualityScore() {
+        if (item.quality < 50) return ++item.quality;
+        return item.quality;}
 }
 

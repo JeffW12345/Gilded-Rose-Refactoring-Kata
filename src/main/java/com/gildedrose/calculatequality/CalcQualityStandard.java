@@ -4,11 +4,15 @@ import com.gildedrose.itemsclasses.Item;
 
 public class CalcQualityStandard implements CalcQuality {
 
+    Item item;
+    public CalcQualityStandard(Item item) {
+        this.item = item;
+    }
 
     @Override
-    public void setQualityScore(Item item) {
-        if (item.sellIn >= 0) {
-            item.quality--;}
-        else {item.quality -= 2;}
+    public int getNewQualityScore() {
+        if (item.sellIn > 0) {
+            return --item.quality;}
+        else {return item.quality -= 2;}
     }
 }
