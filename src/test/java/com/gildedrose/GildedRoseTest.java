@@ -13,7 +13,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class GildedRoseTest {
     Item agedBrie;
     Item ticket;
-
     Item[] items;
     @Test
     void does_AgedBrieQualityCalc_Work_Where_Existing_Val_Under_Fifty(){
@@ -63,11 +62,32 @@ class GildedRoseTest {
     }
 
     @Test
-    void does_BackstageTicketsQualityCalc_Not_Increment_If_Quality_Already_Above_49(){
-        ticket = new Item("ticket", 5, 50);
+    void backstage_Ticket_Quality_Should_Not_Increment_If_Quality_Above_48_And_SellIn_Between_6_And_10_Inc(){
+        ticket = new Item("ticket", 6, 49);
+        ticket.quality = new CalculateQualityBackstageTickets(ticket).getNewQualityScore();
+        assertEquals(49, ticket.quality);
+    }
+
+    @Test
+    void backstage_Ticket_Quality_Should_Not_Increment_By_Two_If_Quality_Below_49_And_SellIn_Between_6_And_10_Inc(){
+        ticket = new Item("ticket", 6, 48);
         ticket.quality = new CalculateQualityBackstageTickets(ticket).getNewQualityScore();
         assertEquals(50, ticket.quality);
     }
+    @Test
+    void Backstage_Ticket_Quality_Should_Not_Increment_If_Quality_Above_47_And_Sellin_Between_1_And_5_Inc(){
+        ticket = new Item("ticket", 5, 48);
+        ticket.quality = new CalculateQualityBackstageTickets(ticket).getNewQualityScore();
+        assertEquals(48, ticket.quality);
+    }
+
+    @Test
+    void Backstage_Ticket_Quality_Should_Increment_By_Three_If_Quality_Below_48_And_Sellin_Between_1_And_5_Inc(){
+        ticket = new Item("ticket", 5, 47);
+        ticket.quality = new CalculateQualityBackstageTickets(ticket).getNewQualityScore();
+        assertEquals(50, ticket.quality);
+    }
+
     @Test
     void does_Standard_Calc_New_SellBy_Decrement_The_Sell_By_One(){
         ticket = new Item("ticket", 1, 50);
