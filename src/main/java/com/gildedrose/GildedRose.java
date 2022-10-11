@@ -5,13 +5,13 @@ import com.gildedrose.itemsclasses.Items;
 
 class GildedRose {
     Item[] items;
+    Items products;
 
     public GildedRose(Item[] items) {
         this.items = items;
     }
     public void updateQuality() {
-        Items products = new Items(items.length);
-        products.itemsList = items;
+        products = new Items(items);
         products.updateQualityAll();
         products.updateSellByAll();
     }

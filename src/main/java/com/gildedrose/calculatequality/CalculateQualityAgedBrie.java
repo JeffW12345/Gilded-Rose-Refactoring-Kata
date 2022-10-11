@@ -3,7 +3,6 @@ package com.gildedrose.calculatequality;
 import com.gildedrose.itemsclasses.Item;
 
 public class CalculateQualityAgedBrie implements CalculateQuality {
-
     Item item;
 
     public CalculateQualityAgedBrie(Item item) {

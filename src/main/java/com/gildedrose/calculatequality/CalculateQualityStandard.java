@@ -11,8 +11,7 @@ public class CalculateQualityStandard implements CalculateQuality {
 
     @Override
     public int getNewQualityScore() {
-        if (item.sellIn > 0) {
-            return --item.quality;}
+        if (item.sellIn > 0) {return --item.quality;}
         else {return item.quality -= 2;}
     }
 }
