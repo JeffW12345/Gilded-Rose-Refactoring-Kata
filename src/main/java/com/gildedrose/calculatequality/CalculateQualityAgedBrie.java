@@ -2,11 +2,11 @@ package com.gildedrose.calculatequality;
 
 import com.gildedrose.itemsclasses.Item;
 
-public class CalcQualityAgedBrie implements CalcQuality {
+public class CalculateQualityAgedBrie implements CalculateQuality {
 
     Item item;
 
-    public CalcQualityAgedBrie(Item item) {
+    public CalculateQualityAgedBrie(Item item) {
         this.item = item;
     }
 

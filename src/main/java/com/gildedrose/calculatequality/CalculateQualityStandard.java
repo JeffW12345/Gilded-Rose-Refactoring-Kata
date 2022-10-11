@@ -2,10 +2,10 @@ package com.gildedrose.calculatequality;
 
 import com.gildedrose.itemsclasses.Item;
 
-public class CalcQualityStandard implements CalcQuality {
+public class CalculateQualityStandard implements CalculateQuality {
 
     Item item;
-    public CalcQualityStandard(Item item) {
+    public CalculateQualityStandard(Item item) {
         this.item = item;
     }
 

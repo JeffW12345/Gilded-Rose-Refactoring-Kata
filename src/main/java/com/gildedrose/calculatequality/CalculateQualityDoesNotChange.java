@@ -2,9 +2,9 @@ package com.gildedrose.calculatequality;
 
 import com.gildedrose.itemsclasses.Item;
 
-public class CalcQualityDoesNotChange implements CalcQuality {
+public class CalculateQualityDoesNotChange implements CalculateQuality {
     Item item;
-    public CalcQualityDoesNotChange(Item item) {
+    public CalculateQualityDoesNotChange(Item item) {
         this.item = item;
     }
 

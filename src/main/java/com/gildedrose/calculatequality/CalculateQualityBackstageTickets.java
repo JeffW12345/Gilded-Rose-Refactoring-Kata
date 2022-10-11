@@ -2,9 +2,9 @@ package com.gildedrose.calculatequality;
 
 import com.gildedrose.itemsclasses.Item;
 
-public class CalcQualityBackstageTickets implements CalcQuality {
+public class CalculateQualityBackstageTickets implements CalculateQuality {
     Item item;
-    public CalcQualityBackstageTickets(Item item) {
+    public CalculateQualityBackstageTickets(Item item) {
         this.item = item;
     }
 
