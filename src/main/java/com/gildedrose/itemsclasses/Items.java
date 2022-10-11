@@ -45,20 +45,6 @@ public class Items {
             item.quality = new CalculateQualityStandard(item).getNewQualityScore();
         }
     }
-    private void updateQuality(ProductType productType, Item item) {
-        if(productType == ProductType.AGED_BRIE){
-            item.quality = new CalculateQualityAgedBrie(item).getNewQualityScore();
-        }
-        if(productType == ProductType.SULFURAS){
-            item.quality = new CalculateQualityDoesNotChange(item).getNewQualityScore();
-        }
-        if(productType == ProductType.BACKSTAGE_PASSES){
-            item.quality = new CalculateQualityBackstageTickets(item).getNewQualityScore();
-        }
-        if(productType == ProductType.STANDARD_ITEMS){
-            item.quality = new CalculateQualityStandard(item).getNewQualityScore();
-        }
-    }
 
     public void updateSellByAll() {
         for(Item item : itemsList){
