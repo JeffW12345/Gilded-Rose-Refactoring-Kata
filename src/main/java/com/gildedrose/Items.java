@@ -1,7 +1,7 @@
 package com.gildedrose;
 
 public class Items {
-    public Item[] itemsList;
+    private Item[] itemsList;
 
     public Items(Item[] items) {
         this.itemsList = items;

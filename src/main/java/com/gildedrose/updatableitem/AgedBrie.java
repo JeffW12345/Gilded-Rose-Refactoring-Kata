@@ -4,7 +4,7 @@ import com.gildedrose.Item;
 
 public class AgedBrie implements UpdatableItem {
 
-    Item item;
+    private Item item;
 
     public AgedBrie(Item item) {
         this.item = item;
