@@ -1,7 +1,5 @@
 package com.gildedrose;
 
-import com.gildedrose.itemsclasses.Item;
-
 public class TexttestFixture {
     public static void main(String[] args) {
         System.out.println("OMGHAI!");
