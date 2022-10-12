@@ -13,6 +13,11 @@ public class Items {
     public Items(Item[] items) {
         this.itemsList = items;
     }
+
+    public void UpdateQualityAndSellByAll(){
+        updateQualityAll();
+        updateSellByAll();
+    }
     public void updateQualityAll(){
         for(Item item : itemsList){
             updateQuality(item);

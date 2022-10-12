@@ -12,7 +12,6 @@ class GildedRose {
     }
     public void updateQuality() {
         products = new Items(items);
-        products.updateQualityAll();
-        products.updateSellByAll();
+        products.UpdateQualityAndSellByAll();
     }
 }
