@@ -11,5 +11,8 @@ public class StandardRules implements UpdatableItem {
 
     @Override
     public void update() {
+        item.quality--;
+        item.sellIn--;
+        if(item.sellIn < 0) item.quality++;
     }
 }

@@ -10,5 +10,6 @@ public class Sulfuras implements UpdatableItem {
 
     @Override
     public void update() {
+        // No change in value.
     }
 }

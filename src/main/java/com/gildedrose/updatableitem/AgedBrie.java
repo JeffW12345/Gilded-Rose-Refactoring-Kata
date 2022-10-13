@@ -12,6 +12,9 @@ public class AgedBrie implements UpdatableItem {
 
     @Override
     public void update() {
-
+        if(item.quality < 50){
+            item.quality++;
+        }
+        item.sellIn--;
     }
 }
