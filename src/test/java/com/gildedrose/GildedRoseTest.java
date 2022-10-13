@@ -89,11 +89,11 @@ class GildedRoseTest {
         assertEquals(9, standard.quality);
     }
     @Test
-    void do_Standard_Products_Quality_Remain_Unchanged_If_Sellin_Below_One(){
+    void do_Standard_Products_Quality_Decrement_By_Two_If_Sellin_Below_One(){
         standard = new Item("Standard", 0, 10);
         updatableItem = new StandardRules(standard);
         updatableItem.update();
-        assertEquals(10, standard.quality);
+        assertEquals(8, standard.quality);
     }
 
     @Test
